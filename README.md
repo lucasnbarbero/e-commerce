@@ -1,4 +1,4 @@
-# E-Comerce - Module Stock
+# E-Commerce - Module Stock
 
 ## Project 2022.02.18-02
 
