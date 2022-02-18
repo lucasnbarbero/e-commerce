@@ -1,18 +1,9 @@
-import { Application } from "express";
+import { Router, Request, Response } from "express";
 
-export default abstract class CommonRoutes {
-  protected app: Application;
-  private name: string;
+const router = Router();
 
-  constructor(app: Application, name: string) {
-    this.app = app;
-    this.name = name;
-    this.setUpRoutes();
-  }
+router.get("/", (req: Request, res: Response) => {
+  res.send("Hola mundo!");
+});
 
-  public getName() {
-    return this.name;
-  }
-
-  abstract setUpRoutes(): Application;
-}
+export default router;
