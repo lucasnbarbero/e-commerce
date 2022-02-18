@@ -1,6 +1,3 @@
 # E-Comerce - Module Stock
 
-## Proyect setup
-```
-npm i express express-handlebars mongoose rimraf
-```
+## Proyect 20220218-02
