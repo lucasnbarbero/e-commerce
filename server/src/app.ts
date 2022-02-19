@@ -3,7 +3,7 @@ import morgan from "morgan";
 import cors from "cors";
 import expressWinston from "express-winston";
 import winston from "winston";
-import CommonRoutes from "./http/routes/common.routes";
+// import CommonRoutes from "./http/routes/common.routes";
 
 class Application {
   app: express.Application;
@@ -17,7 +17,7 @@ class Application {
 
   settings() {
     this.app.set('port', 3000);
-  };
+  }
 
   middlewares() {
     this.app.use(morgan('dev'));
@@ -32,11 +32,13 @@ class Application {
         winston.format.json()
       ),
     }));
-  };
-
+  }
+  // not work for CommonRoutes 
   routes() {
-    this.app.use('/', CommonRoutes);
-  };
+    this.app.use('/', (req, res) => {
+      res.send("hello toDo.web!");
+    });
+  }
 
   start(): void {
     this.app.listen(this.app.get('port'), () => {
