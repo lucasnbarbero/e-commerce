@@ -1,9 +1,9 @@
-import mongoose from "mongoose";
+import { connect } from "mongoose";
 
-export async function connect() {
+export const startConnection = async (): Promise<void> => {
   try {
-    await mongoose.connect("mongodb://localhost/control-stock");
-    console.log(">>>Database connected");
+    const db = await connect('mongodb://localhost/control-stock');
+    console.log(db.connection.name);
     
   } catch (error) {
     console.log(error);

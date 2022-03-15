@@ -1,9 +1,12 @@
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
-import expressWinston from "express-winston";
-import winston from "winston";
+// import expressWinston from "express-winston";
+// import winston from "winston";
 // import CommonRoutes from "./http/routes/common.routes";
+
+//  IMPORT ROUTES
+import UserRoutes from "./http/routes/user.routes";
 
 class Application {
   app: express.Application;
@@ -15,29 +18,32 @@ class Application {
     this.routes();
   }
 
-  settings() {
-    this.app.set('port', 3000);
+  settings(): void {
+    this.app.set('port', process.env.PORT ||3000);
   }
 
   middlewares() {
     this.app.use(morgan('dev'));
-    this.app.use(cors());
     this.app.use(express.json());
-    this.app.use(expressWinston.logger({
-      transports: [
-        new winston.transports.Console()
-      ],
-      format: winston.format.combine(
-        winston.format.colorize(),
-        winston.format.json()
-      ),
-    }));
+    this.app.use(cors());
+    
+    
+    // this.app.use(expressWinston.logger({
+    //   transports: [
+    //     new winston.transports.Console()
+    //   ],
+    //   format: winston.format.combine(
+    //     winston.format.colorize(),
+    //     winston.format.json()
+    //   ),
+    // }));
+
   }
   // not work for CommonRoutes 
-  routes() {
-    this.app.use('/', (req, res) => {
-      res.send("hello toDo.web!");
-    });
+  public routes(): void {
+    const router: express.Router = express.Router();
+
+    this.app.use('/api/users', UserRoutes)
   }
 
   start(): void {
@@ -47,4 +53,4 @@ class Application {
   }
 }
 
-export default Application;
+export { Application };

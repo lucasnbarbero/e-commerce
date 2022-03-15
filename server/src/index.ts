@@ -1,7 +1,7 @@
-import App from './app';
-import { connect } from './database';
+import { Application } from './app';
+import { startConnection } from './database';
 
-const app = new App();
-connect();
+const app = new Application();
+startConnection();
 
 app.start();

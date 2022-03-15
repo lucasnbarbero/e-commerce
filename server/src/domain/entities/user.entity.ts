@@ -1,23 +1,23 @@
 import shortid from "shortid";
 
 class User {
-  private id: string;
-  private name: string;
+  private id: String;
+  private name: String;
 
-  constructor(name: string) {
+  constructor(name: String) {
     this.id = shortid.generate();
     this.name = name;
   };
 
-  public getId(): string {
+  public getId(): String {
     return this.id;
   }
 
-  public getName(): string {
+  public getName(): String {
     return this.name;
   }
 
-  public setName(value: string): string {
+  public setName(value: String): String {
     return this.name = value;
   }
 }
