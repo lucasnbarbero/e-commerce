@@ -1,6 +1,5 @@
 import { Router } from "express";
 
-
 import listUserAction from "../actions/user/list.user.action";
 import createUserAction from "../actions/user/create.user.action";
 
