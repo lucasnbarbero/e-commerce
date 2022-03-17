@@ -20,16 +20,26 @@ class UserRepository {
 
 
   //  BUSCAR POR ID
-  async findOneById(id: String): Promise<User | null> {
+  async findOneById(id: string): Promise<User | null> {
     const user = UserSchema.findById(id);
     return user
   }
 
-
   //  BUSCAR POR NOMBRE
-  async findOneByName(name: String): Promise<User | null> {
-    const user = this.users.find(u => u.getName() === name)
-    return (user) ? user : null
+  async findOneByName(name: string): Promise<User | null> {
+    const user = UserSchema.findOne({name: name})
+    return user
+  }
+  
+
+  async findAllBy(name?: string, email?: string): Promise<User[]> {
+    let query = this.users;
+
+    if(name) query = query.filter(u => name.includes(u.getName()));
+
+    if(email) query = query.filter(u => email.includes(u.getEmail()));
+    
+    return query;
   }
 
 
@@ -41,14 +51,12 @@ class UserRepository {
 
 
   //  ELIMINAR REGISTRO
-  async deleteById(id: String): Promise<void> {
+  async deleteById(id: string): Promise<void> {
     const user = await UserSchema.findByIdAndDelete(id)
     return user;
   }
 
-  async updateByid(id: String, command: UpdateUserCommand): Promise<User | null> {
-    console.log(id)
-    console.log(command)
+  async updateByid(id: string, command: UpdateUserCommand): Promise<User | null> {
     const user = await UserSchema.findByIdAndUpdate(id, command);
     return user;
   }

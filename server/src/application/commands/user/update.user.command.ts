@@ -1,21 +1,21 @@
 
 class UpdateUserCommand {
   private id: string;
-  private name: String;
-  private email: String;
-  private password: String;
-  private isAdmin: Boolean;
-  private isSeller: Boolean;
-  // private seller: String;
+  private name: string;
+  private email: string;
+  private password: string;
+  private isAdmin: boolean;
+  private isSeller: boolean;
+  // private seller: string;
 
   constructor(
     id: string,
-    name: String,
-    email: String,
-    password: String,
-    isAdmin: Boolean,
-    isSeller: Boolean,
-    // seller: String
+    name: string,
+    email: string,
+    password: string,
+    isAdmin: boolean,
+    isSeller: boolean,
+    // seller: string
   ) {
     this.id = id;
     this.name = name;
@@ -26,31 +26,31 @@ class UpdateUserCommand {
     // this.seller = seller;
   }
 
-  public getId(): String {
+  public getId(): string {
     return this.id;
   }
 
-  public getName(): String {
+  public getName(): string {
     return this.name;
   }
 
-  public getEmail(): String {
+  public getEmail(): string {
     return this.email;
   }
 
-  public getPassword(): String {
+  public getPassword(): string {
     return this.password;
   }
 
-  public getIsAdmin(): Boolean {
+  public getIsAdmin(): boolean {
     return this.isAdmin;
   }
 
-  public getIsSeller(): Boolean {
+  public getIsSeller(): boolean {
     return this.isSeller;
   }
 
-  // public getSeller(): String {
+  // public getSeller(): string {
   //   return this.seller;
   // }
 }

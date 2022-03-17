@@ -1,18 +1,18 @@
 class CreateUserCommand {
-  private name: String;
-  private email: String;
-  private password: String;
-  private isAdmin: Boolean;
-  private isSeller: Boolean;
-  private seller: Object;
+  private name: string;
+  private email: string;
+  private password: string;
+  private isAdmin: boolean;
+  private isSeller: boolean;
+  private seller: object;
 
   constructor(
-    name: String,
-    email: String,
-    password: String,
-    isAdmin: Boolean,
-    isSeller: Boolean,
-    seller: Object
+    name: string,
+    email: string,
+    password: string,
+    isAdmin: boolean,
+    isSeller: boolean,
+    seller: object
   ) {
     this.name = name;
     this.email = email;
@@ -22,27 +22,27 @@ class CreateUserCommand {
     this.seller = seller;
   }
 
-  public getName(): String {
+  public getName(): string {
     return this.name;
   }
 
-  public getEmail(): String {
+  public getEmail(): string {
     return this.email;
   }
 
-  public getPassword(): String {
+  public getPassword(): string {
     return this.password;
   }
 
-  public getIsAdmin(): Boolean {
+  public getIsAdmin(): boolean {
     return this.isAdmin;
   }
 
-  public getIsSeller(): Boolean {
+  public getIsSeller(): boolean {
     return this.isSeller;
   }
 
-  public getSeller(): Object {
+  public getSeller(): object {
     return this.seller;
   }
 }

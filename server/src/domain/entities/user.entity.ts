@@ -1,18 +1,18 @@
 class User {
-  private name: String;
-  private email: String;
-  private password: String;
-  private isAdmin: Boolean;
-  private isSeller: Boolean;
-  private seller: Object;
+  private name: string;
+  private email: string;
+  private password: string;
+  private isAdmin: boolean;
+  private isSeller: boolean;
+  private seller: object;
 
   constructor(
-    name: String,
-    email: String,
-    password: String,
-    isAdmin: Boolean,
-    isSeller: Boolean,
-    seller: Object
+    name: string,
+    email: string,
+    password: string,
+    isAdmin: boolean,
+    isSeller: boolean,
+    seller: object
   ) {
     this.name = name;
     this.email = email;
@@ -24,52 +24,52 @@ class User {
 
   //  GETTERS
 
-  public getName(): String {
+  public getName(): string {
     return this.name;
   }
 
-  public getEmail(): String {
+  public getEmail(): string {
     return this.email;
   }
 
-  public getPassword(): String {
+  public getPassword(): string {
     return this.password;
   }
 
-  public getIsAdmin(): Boolean {
+  public getIsAdmin(): boolean {
     return this.isAdmin;
   }
 
-  public getIsSeller(): Boolean {
+  public getIsSeller(): boolean {
     return this.isSeller;
   }
 
-  public getSeller(): Object {
+  public getSeller(): object {
     return this.seller;
   }
 
   //  SETTERS
-  public setName(value: String): String {
+  public setName(value: string): string {
     return (this.name = value);
   }
 
-  public setEmail(value: String): String {
+  public setEmail(value: string): string {
     return (this.email = value);
   }
 
-  public setPassword(value: String): String {
+  public setPassword(value: string): string {
     return (this.password = value);
   }
 
-  public setIsAdmin(value: Boolean): Boolean {
+  public setIsAdmin(value: boolean): boolean {
     return (this.isAdmin = value);
   }
 
-  public setIsSeller(value: Boolean): Boolean {
+  public setIsSeller(value: boolean): boolean {
     return (this.isSeller = value);
   }
 
-  public setSeller(value: Object): Object {
+  public setSeller(value: object): object {
     return (this.seller = value);
   }
 }

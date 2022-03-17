@@ -6,6 +6,9 @@ class UpdateUserHanlder {
     const user = await UserRepository.findOneById(command.getId());
     if (!user) throw new Error("User not found");
 
+    const userRepited = await UserRepository.findAllBy(command.getName(), command.getEmail());
+    if (userRepited) throw new Error("User repited");
+
     await UserRepository.updateByid(command.getId(), command);
   }
 }
