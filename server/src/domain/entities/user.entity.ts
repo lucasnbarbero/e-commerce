@@ -1,5 +1,3 @@
-import shortid from "shortid";
-
 class User {
   private name: String;
   private email: String;

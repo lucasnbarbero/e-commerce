@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import DeleteUserHandler from "../../../application/handlers/user/delete.user.handler";
 import { DeleteUserCommand } from "../../../application/commands/user/delete.user.command";
-import User from "../../../models/user.model";
 
 class DeleteUserAction {
   async run(req: Request, res: Response) {

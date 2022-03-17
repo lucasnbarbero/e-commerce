@@ -4,14 +4,9 @@ import UserRepository from "../../../infrastructure/repositories/user.repository
 class UpdateUserHanlder {
   async execute(command: UpdateUserCommand) {
     const user = await UserRepository.findOneById(command.getId());
+    if (!user) throw new Error("User not found");
 
-    if(!user) {
-      throw new Error('User not found');
-    }
-    else {
-      user.setName(command.getName());
-      await UserRepository.update(user);
-    }
+    await UserRepository.updateByid(command.getId(), command);
   }
 }
 
