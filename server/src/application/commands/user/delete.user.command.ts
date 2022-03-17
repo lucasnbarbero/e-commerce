@@ -1,3 +1,3 @@
 export interface DeleteUserCommand {
-  id: string;
+  id: string
 }

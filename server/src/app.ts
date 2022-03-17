@@ -43,7 +43,7 @@ class Application {
   public routes(): void {
     const router: express.Router = express.Router();
 
-    this.app.use('/api/users', UserRoutes)
+    this.app.use('/users', UserRoutes)
   }
 
   start(): void {
