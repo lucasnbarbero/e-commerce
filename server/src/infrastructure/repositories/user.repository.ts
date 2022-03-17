@@ -17,13 +17,11 @@ class UserRepository {
 
   async findOneById(id: String): Promise<User | null> {
     const user = UserSchema.findById(id);
-
     return user
   }
 
   async findOneByName(name: String): Promise<User | null> {
     const user = this.users.find(u => u.getName() === name)
-
     return (user) ? user : null
   }
 
@@ -33,7 +31,8 @@ class UserRepository {
   }
 
   async deleteById(id: String): Promise<void> {
-    console.log(id)
+    const user = await UserSchema.findByIdAndDelete(id)
+    return user;
   }
 
 }
