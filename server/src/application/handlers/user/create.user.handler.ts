@@ -5,8 +5,13 @@ import UserRepository from "../../../infrastructure/repositories/user.repository
 class CreateUserHandler {
   async execute(command: CreateUserCommand) {
     if (await UserRepository.findOneByName(command.getName())) {
-      throw new Error("User not found");
+      throw new Error("This username already exists");
     }
+
+    if (await UserRepository.findOneByEmail(command.getEmail())) {
+      throw new Error("This email already exists")
+    }
+
     const user: User = new User(
       command.getName(),
       command.getEmail(),

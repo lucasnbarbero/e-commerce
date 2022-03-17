@@ -1,6 +1,6 @@
 import UpdateUserCommand from '../../application/commands/user/update.user.command';
 import User from '../../domain/entities/user.entity';
-import UserSchema from '../../models/user.model'
+import UserSchema from '../models/user.model'
 
 class UserRepository {
   private users: User[];
@@ -30,16 +30,10 @@ class UserRepository {
     const user = UserSchema.findOne({name: name})
     return user
   }
-  
 
-  async findAllBy(name?: string, email?: string): Promise<User[]> {
-    let query = this.users;
-
-    if(name) query = query.filter(u => name.includes(u.getName()));
-
-    if(email) query = query.filter(u => email.includes(u.getEmail()));
-    
-    return query;
+  async findOneByEmail(email: string): Promise<User | null> {
+    const user = UserSchema.findOne({email: email});
+    return user;
   }
 
 
