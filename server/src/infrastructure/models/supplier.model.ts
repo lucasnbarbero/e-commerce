@@ -5,10 +5,29 @@ const supplierSchema = new Schema({
         type: String,
         lowercase: true,
         maxlength: 50,
-        required: true
+        required: [true, 'The name is required'],
     },
-    telephone: String,
-    detail: String
+    cuit: {
+        type: String,
+        length: 11,
+        required: [true, 'The C.U.I.T. is required'],
+    },
+    email: {
+        type: String,
+        required: [true, 'The email is required'],
+    },
+    customerType: {
+        type: String
+    },
+    cityId: {
+        type: String,
+    },
+    phone: {
+        type: String,
+    },
+    web: {
+        type: String,
+    },
 });
 
 export default model("Supplier", supplierSchema);

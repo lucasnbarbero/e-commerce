@@ -7,6 +7,7 @@ import cors from "cors";
 
 //  IMPORT ROUTES
 import UserRoutes from "./http/routes/user.routes";
+import SuppliersRoutes from "./http/routes/suppliers.routes";
 
 class Application {
   app: express.Application;
@@ -44,6 +45,7 @@ class Application {
     const router: express.Router = express.Router();
 
     this.app.use('/users', UserRoutes)
+    this.app.use('/suppliers', SuppliersRoutes)
   }
 
   start(): void {
