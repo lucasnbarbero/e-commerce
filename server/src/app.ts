@@ -8,6 +8,7 @@ import cors from "cors";
 //  IMPORT ROUTES
 import UserRoutes from "./http/routes/user.routes";
 import SuppliersRoutes from "./http/routes/suppliers.routes";
+import ProductRoutes from "./http/routes/product.routes";
 
 class Application {
   app: express.Application;
@@ -27,8 +28,8 @@ class Application {
     this.app.use(morgan('dev'));
     this.app.use(express.json());
     this.app.use(cors());
-    
-    
+
+
     // this.app.use(expressWinston.logger({
     //   transports: [
     //     new winston.transports.Console()
@@ -40,12 +41,13 @@ class Application {
     // }));
 
   }
-  // not work for CommonRoutes 
+  // not work for CommonRoutes
   public routes(): void {
     const router: express.Router = express.Router();
 
     this.app.use('/users', UserRoutes)
     this.app.use('/suppliers', SuppliersRoutes)
+    this.app.use('/products', ProductRoutes)
   }
 
   start(): void {
