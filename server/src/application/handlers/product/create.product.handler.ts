@@ -19,8 +19,8 @@ class CreateProductHandler {
       command.getQuantity(),
       command.getAmount(),
       command.getMinimalExistence(),
-      command.getCode(),
       command.getSalesPriceWithTaxes(),
+      command.getCode()
     );
 
     await ProductRepository.createProduct(product);

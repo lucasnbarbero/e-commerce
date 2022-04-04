@@ -1,15 +1,16 @@
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
+// IMPORT ROUTES
+import UserRoutes from "./http/routes/user.routes";
+import SuppliersRoutes from "./http/routes/suppliers.routes";
+import ProductRoutes from "./http/routes/product.routes";
+import ProductBrandsRoutes from "./http/routes/productBrand.routes";
 // import expressWinston from "express-winston";
 // import winston from "winston";
 // import CommonRoutes from "./http/routes/common.routes";
 
-//  IMPORT ROUTES
-import UserRoutes from "./http/routes/user.routes";
-import SuppliersRoutes from "./http/routes/suppliers.routes";
-import ProductRoutes from "./http/routes/product.routes";
-
+//  I
 class Application {
   app: express.Application;
 
@@ -48,6 +49,7 @@ class Application {
     this.app.use('/users', UserRoutes)
     this.app.use('/suppliers', SuppliersRoutes)
     this.app.use('/products', ProductRoutes)
+    this.app.use('/productBrands', ProductBrandsRoutes)
   }
 
   start(): void {

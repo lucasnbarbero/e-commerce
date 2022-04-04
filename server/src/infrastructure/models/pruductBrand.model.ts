@@ -8,4 +8,4 @@ const brandSchema = new Schema({
     }
 });
 
-export default model("brandSchema", brandSchema);
+export default model("ProductBrands", brandSchema);
