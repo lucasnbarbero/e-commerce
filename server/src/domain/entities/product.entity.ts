@@ -17,7 +17,7 @@ class Product {
     constructor(
         description: string, price: number, costMediumPrice: number, marginPercentage: number,
         salesPriceWithoutTaxes: number, quantity: number, amount: number, minimalExistence: number,
-        code: string, salesPriceWithTaxes: number
+         salesPriceWithTaxes: number,code: string
     ) {
       this.description = description;
       this.price = price;

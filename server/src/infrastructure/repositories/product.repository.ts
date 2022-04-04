@@ -1,4 +1,4 @@
-// import UpdateProductCommand from '../../application/commands/Product/update.Product.command';
+import UpdateProductCommand from '../../application/commands/product/update.product.command';
 import Product from '../../domain/entities/product.entity';
 import ProductSchema from '../models/product.model'
 
@@ -42,10 +42,10 @@ class ProductRepository {
     return Product;
   }
 
-//   async updateByid(id: string, command: UpdateProductCommand): Promise<Product | null> {
-//     const Product = await ProductSchema.findByIdAndUpdate(id, command);
-//     return Product;
-//   }
+  async updateById(id: string, command: UpdateProductCommand): Promise<Product | null> {
+    const Product = await ProductSchema.findByIdAndUpdate(id, command);
+    return Product;
+  }
 
 }
 

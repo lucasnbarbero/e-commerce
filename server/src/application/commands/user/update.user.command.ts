@@ -15,7 +15,7 @@ class UpdateUserCommand {
     password: string,
     isAdmin: boolean,
     isSeller: boolean,
-    // seller: string
+    // seller: stringzz
   ) {
     this.id = id;
     this.name = name;
@@ -50,9 +50,6 @@ class UpdateUserCommand {
     return this.isSeller;
   }
 
-  // public getSeller(): string {
-  //   return this.seller;
-  // }
 }
 
 export default UpdateUserCommand;
