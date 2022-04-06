@@ -1,33 +1,30 @@
 import { Schema, model } from "mongoose";
 
 const supplierSchema = new Schema({
-    name: {
+    businessName: {
         type: String,
-        lowercase: true,
-        maxlength: 50,
-        required: [true, 'The name is required'],
+        required: [true, 'The businessName is required'],
+    },
+    tradename: {
+        type: String,
     },
     cuit: {
         type: String,
         length: 11,
-        required: [true, 'The C.U.I.T. is required'],
     },
-    email: {
-        type: String,
-        required: [true, 'The email is required'],
-    },
-    customerType: {
-        type: String
-    },
-    cityId: {
-        type: String,
-    },
-    phone: {
-        type: String,
-    },
-    web: {
-        type: String,
-    },
+    address: String,
+    country: String,
+    province: String,
+    city: String,
+    postalCode: String,
+    phone: String,
+    cellPhone: String,
+    email: String,
+    web: String,
+    observations: String,
+    wayToPay: String,
+    taxable: String,
+    condition: Boolean
 });
 
 export default model("Supplier", supplierSchema);
