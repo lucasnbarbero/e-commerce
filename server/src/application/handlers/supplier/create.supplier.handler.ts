@@ -6,13 +6,22 @@ class CreateSupplierHandler {
 
   async execute(command: CreateSupplierCommand) {
     const supplier: Supplier = new Supplier(
-      command.getName(),
-      command.getCuit(),
-      command.getEmail(),
-      command.getCustomerType(),
-      command.getCityId(),
-      command.getPhone(),
-      command.getWeb()
+      command.businessName,
+      command.tradename,
+      command.cuit,
+      command.address,
+      command.country,
+      command.province,
+      command.city,
+      command.postalCode,
+      command.phone,
+      command.cellPhone,
+      command.email,
+      command.web,
+      command.observations,
+      command.wayToPay,
+      command.taxable,
+      command.condition,
     );
 
     await SupplierRepository.createSupplier(supplier);
