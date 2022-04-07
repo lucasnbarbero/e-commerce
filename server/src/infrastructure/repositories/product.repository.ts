@@ -32,7 +32,8 @@ class ProductRepository {
   //  CREAR REGISTRO
   async createProduct(Product: Product): Promise<void>{
     const ProductObj = new ProductSchema(Product);
-    ProductObj.save();
+    // console.log(ProductObj)
+    await ProductObj.save();
   }
 
 

@@ -1,6 +1,6 @@
 class ProductBrand {
     private description: string;
-    
+
     constructor(
         description: string,
     ) {

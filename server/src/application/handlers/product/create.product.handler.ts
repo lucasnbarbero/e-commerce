@@ -9,7 +9,6 @@ class CreateProductHandler {
         // if (await ProductRepository.(VALIDACIONES)) {
         //   throw new Error("VALIDACIONES);
         // }
-
     const product: Product = new Product(
       command.getDescription(),
       command.getPrice(),
